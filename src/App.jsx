@@ -46,7 +46,7 @@ const PRODUCTS = [
   {
     id: 5,
     name: "Royal Emerald Pocket",
-    brand: "Kolchoes",
+    brand: "kolchao",
     price: "R$ 15.500,00",
     image: "https://images.unsplash.com/photo-1616627547584-bf28cee262db?auto=format&fit=crop&q=80&w=1000",
     description: "Série limitada com acabamento em veludo verde esmeralda e fios de cobre.",
@@ -63,7 +63,7 @@ const PRODUCTS = [
   }
 ];
 
-const BRANDS = ["SIMMONS", "SERTA", "LATTOFLEX", "KOLCHOES", "SEALY", "TEMPUR", "STEARNS & FOSTER"];
+const BRANDS = ["SIMMONS", "SERTA", "LATTOFLEX", "kolchao", "SEALY", "TEMPUR", "STEARNS & FOSTER"];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -79,18 +79,18 @@ const Navbar = () => {
     <nav className="glass-nav" style={{ padding: scrolled ? '15px 8%' : '25px 8%' }}>
       <div className="logo">
         <Bed size={32} />
-        KOLCHOES.com
+        KOLCHAO.com
       </div>
 
       <div className="nav-links d-none d-lg-flex">
-        <a href="#home">Collection</a>
-        <a href="#catalogo">Boutique</a>
-        <a href="#marcas">Maisons</a>
-        <a href="#admin">Concierge</a>
+        <a href="#home">Coleção</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#marcas">Parceiro</a>
+        {/* <a href="#admin">Administrativo</a> */}
       </div>
 
       <div className="d-flex align-items-center gap-4">
-        <button className="btn-premium d-none d-md-flex">Private Access</button>
+        {/* <button className="btn-premium d-none d-md-flex">Acesso</button> */}
         <button className="d-lg-none" onClick={() => setMobileMenu(true)} style={{ background: 'none', color: 'white' }}>
           <Menu size={32} />
         </button>
@@ -179,7 +179,7 @@ function App() {
               transition={{ duration: 0.8 }}
             >
               <div className="product-brand" style={{ fontSize: '0.9rem', marginBottom: '30px' }}>
-                Est. 2010 | São Paulo
+                Est. 2010 | Brasília
               </div>
               <h1>Sleep is the <span>Ultimate Luxury.</span></h1>
             </motion.div>
@@ -190,7 +190,7 @@ function App() {
               transition={{ delay: 0.5, duration: 1 }}
               style={{ fontSize: '1.4rem', color: 'var(--text-muted)', marginBottom: '50px', maxWidth: '600px' }}
             >
-              Curadoria exclusiva das melhores casas de design de sono do mundo. Tecnologia invisível para um descanso inesquecível.
+              Curadoria exclusiva das melhores marcas de design de sono do mundo. Tecnologia invisível para um descanso inesquecível.
             </motion.p>
 
             <motion.div
@@ -199,21 +199,21 @@ function App() {
               transition={{ delay: 0.8 }}
               style={{ display: 'flex', gap: '20px' }}
             >
-              <button className="btn-premium">View Catalog</button>
+              <button className="btn-premium">Ver catálogo</button>
               <button style={{ background: 'none', border: '1px solid var(--glass-border)', color: 'white', padding: '16px 40px', letterSpacing: '2px', fontSize: '0.8rem', fontWeight: 600 }}>
-                OUR STORY
+                NOSSA HISTÓRIA
               </button>
             </motion.div>
           </div>
         </section>
 
         {/* STATS/AWARDS */}
-        <section style={{ borderTop: '1px solid var(--glass-border)', background: 'rgba(255,255,255,0.02)' }}>
+        <section style={{ borderTop: '1px solid var(--glass-border)', background: 'rgba(255,255,255,0.02)', padding: '60px 0' }}>
           <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px', padding: '0 8%' }}>
             {[
-              { icon: <Award size={32} />, label: "Luxury Choice 2025", value: "Best in Show" },
-              { icon: <Globe size={32} />, label: "Global Partners", value: "15+ Countries" },
-              { icon: <Smartphone size={32} />, label: "Concierge 24/7", value: "Personalized Support" }
+              { icon: <Award size={32} />, label: "Escolha de Luxo 2025", value: "Melhor da Categoria" },
+              { icon: <Globe size={32} />, label: "Parceiros Globais", value: "15+ Países" },
+              { icon: <Smartphone size={32} />, label: "Concierge 24h", value: "Atendimento Personalizado" }
             ].map((stat, i) => (
               <div key={i} style={{ textAlign: 'center' }}>
                 <div style={{ color: 'var(--secondary)', marginBottom: '15px', display: 'flex', justifyContent: 'center' }}>{stat.icon}</div>
@@ -226,9 +226,9 @@ function App() {
 
         {/* CATALOGUE */}
         <section id="catalogo">
-          <div style={{ padding: '0 8%', marginBottom: '60px' }}>
-            <div className="product-brand">Exclusive Curated Boutique</div>
-            <h2 style={{ fontSize: '4rem' }}>The Collection</h2>
+          <div style={{ padding: '0 8%', margin: '60px 0' }}>
+            <div className="product-brand">Opções Selecionadas a Dedo</div>
+            <h2 style={{ fontSize: '4rem' }}>Catálogo Exclusivo</h2>
           </div>
 
           <div className="featured-grid">
@@ -275,28 +275,73 @@ function App() {
 
       <footer style={{ background: '#000', padding: '100px 8% 50px', borderTop: '1px solid var(--glass-border)' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '80px' }}>
+
+          {/* BRAND */}
           <div>
-            <div className="logo" style={{ marginBottom: '30px' }}>KOLCHOES</div>
-            <p style={{ color: 'var(--text-muted)' }}>A referência em luxo e saúde para o sono no Brasil.</p>
+            <div className="logo" style={{ marginBottom: '30px' }}>KOLCHAO.com</div>
+            <p style={{ color: 'var(--text-muted)' }}>
+              A referência em luxo e saúde para o sono no Brasil.
+            </p>
           </div>
+
+          {/* EXPLORE */}
           <div>
-            <h4 style={{ color: 'white', marginBottom: '25px', textTransform: 'uppercase', letterSpacing: '2px' }}>Explore</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', color: 'var(--text-muted)' }}>
-              <a href="#home">Home</a>
-              <a href="#catalogo">Boutique</a>
-              <a href="#marcas">Partners</a>
+            <h4 style={{ color: 'white', marginBottom: '25px', textTransform: 'uppercase', letterSpacing: '2px' }}>
+              Explorar
+            </h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+              <a href="#home" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Coleção</a>
+              <a href="#catalogo" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Catálogo</a>
+              <a href="#marcas" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Parceiros</a>
             </div>
           </div>
+
+          {/* CONTATOS */}
           <div>
-            <h4 style={{ color: 'white', marginBottom: '25px', textTransform: 'uppercase', letterSpacing: '2px' }}>Legal</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', color: 'var(--text-muted)' }}>
-              <span>Privacy Policy</span>
-              <span>Terms of Luxury Use</span>
+            <h4 style={{ color: 'white', marginBottom: '25px', textTransform: 'uppercase', letterSpacing: '2px' }}>
+              Contato
+            </h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+              <span style={{ color: 'var(--text-muted)' }}>Brasília - DF</span>
+              <a href="tel:+5561999999999" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
+                (61) 99999-9999
+              </a>
+              <a href="mailto:contato@kolchao.com" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
+                contato@kolchao.com
+              </a>
+              <a href="https://wa.me/5561999999999" target="_blank" rel="noreferrer"
+                style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
+                WhatsApp
+              </a>
             </div>
           </div>
+
+          {/* LEGAL */}
+          <div>
+            <h4 style={{ color: 'white', marginBottom: '25px', textTransform: 'uppercase', letterSpacing: '2px' }}>
+              Legal
+            </h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+              <a href="#" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
+                Política de Privacidade
+              </a>
+              <a href="#" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>
+                Termos de Uso
+              </a>
+            </div>
+          </div>
+
         </div>
-        <div style={{ marginTop: '100px', borderTop: '1px solid var(--glass-border)', paddingTop: '40px', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
-          2026 KOLCHOES.COM | ALL RIGHTS RESERVED
+
+        <div style={{
+          marginTop: '100px',
+          borderTop: '1px solid var(--glass-border)',
+          paddingTop: '40px',
+          textAlign: 'center',
+          color: 'var(--text-muted)',
+          fontSize: '0.8rem'
+        }}>
+          2026 kolchao.COM | TODOS OS DIREITOS RESERVADOS
         </div>
       </footer>
 
